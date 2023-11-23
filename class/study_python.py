@@ -1,19 +1,26 @@
 class Graphics:
-    def __init__(self, square_side=None, length=None, width=None, radius=None):
+    def __init__(self, square_side, length, width, radius) -> None :
         self.square_side, self.length, self.width, self.radius = square_side, length, width, radius
     
     def getSquareArea(self):
-        square_area = self.square_side * self.square_side
-        return square_area
-
+        if self.square_side != None :
+            square_area = self.square_side * self.square_side
+            return square_area
+        else:
+            return None
     def getRectangleArea(self):
-        rectangle_area = self.length * self.width
-        return rectangle_area
+        if self.length != None and self.width != None:
+            rectangle_area = self.length * self.width
+            return rectangle_area
+        else:
+            return None
 
     def getCircleArea(self):
-        circle_area = self.radius * self.radius * 3.14
-        return circle_area
-
+        if self.radius != None :
+            circle_area = self.radius * self.radius * 3.14
+            return circle_area
+        else:
+            return None
 def main():
     graphics_object = Graphics(5, 10, 5, 6)
     print(graphics_object.getSquareArea())
